@@ -18,3 +18,13 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
         this.encendido = false;
         return mostrarEstado("Radio apagado.");
     }
+
+    @Override
+    public String cambiarVolumen(int incremento) {
+        if (encendido) {
+            this.volumen += incremento;
+            return mostrarEstado("Volumen: " + this.volumen);
+        } else {
+            return mostrarEstado("El radio esta apagado, Encendelo primero.");
+        }
+    }
