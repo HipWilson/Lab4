@@ -24,6 +24,38 @@ public class SimuladorRadio {
             scanner.nextLine(); 
 
             String resultado = ""; // Iniciar el mensaje
+
+            switch (opcion) {
+                case 1 -> resultado = radio.encender();
+                case 2 -> resultado = radio.apagar();
+                case 3 -> {
+                    System.out.print("Ingrese incremento del volumen (+/-): ");
+                    int incremento = scanner.nextInt();
+                    resultado = radio.cambiarVolumen(incremento);
+                }
+                case 4 -> resultado = radio.cambiarBanda();
+                case 5 -> {
+                    System.out.print("Ingrese el cambio de frecuencia (ej. 0.5): ");
+                    double incremento = scanner.nextDouble();
+                    resultado = radio.cambiarEmisora(incremento);
+                }
+                case 6 -> {
+                    System.out.print("Ingrese el nombre de la emisora para guardar: ");
+                    String emisora = scanner.nextLine();
+                    resultado = radio.guardarEmisora(emisora);
+                }
+                case 7 -> {
+                    System.out.print("Ingrese la posicion de la emisora guardada: ");
+                    int posicion = scanner.nextInt();
+                    resultado = radio.cargarEmisora(posicion);
+                }
+                case 8 -> resultado = radio.conectarTelefono();
+                case 9 -> resultado = radio.desconectarTelefono();
+                case 10 -> resultado = radio.ModoEspera();
+                case 11 -> resultado = radio.VerPronostico();
+                case 0 -> resultado = "Feliz dia ...";
+                default -> resultado = "Opcion invalida. Intente de nuevo.";
+            }
         }
     }
 
