@@ -12,3 +12,9 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
         this.encendido = true;
         return mostrarEstado("Radio encendido.");
     }
+
+    @Override
+    public String apagar() {
+        this.encendido = false;
+        return mostrarEstado("Radio apagado.");
+    }
