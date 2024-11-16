@@ -56,7 +56,13 @@ public class SimuladorRadio {
                 case 0 -> resultado = "Feliz dia ...";
                 default -> resultado = "Opcion invalida. Intente de nuevo.";
             }
-        }
+            // Imprimir el resultado devuelto por los metodos
+            if (!resultado.isEmpty()) {
+                System.out.println(resultado);
+            }
+        } while (opcion != 0);
+        
+        scanner.close();
     }
 
 }
