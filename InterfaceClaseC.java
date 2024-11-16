@@ -46,3 +46,12 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
         }
         return mostrarEstado("El radio esta apagado, Encendelo primero.");
     }
+
+    @Override
+    public String guardarEmisora(String emisora) {
+        if (encendido && emisoraIndex < emisorasGuardadas.length) {
+            emisorasGuardadas[emisoraIndex++] = emisora;
+            return mostrarEstado("Emisora guardada: " + emisora);
+        }
+        return mostrarEstado("No se pudo guardar la emisora, Verifique el estado del radio.");
+    }
