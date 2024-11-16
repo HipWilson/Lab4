@@ -73,3 +73,26 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
     public String desconectarTelefono() {
         return mostrarEstado("Telefono desconectado.");
     }
+
+    // Metodos de FuncionalidadesClaseC
+    @Override
+    public String ModoEspera() {
+        if (encendido) {
+            return mostrarEstado("Cambiando a llamada en espera.");
+        }
+        return mostrarEstado("El radio esta apagado, Encendelo primero.");
+    }
+
+    @Override
+    public String VerPronostico() {
+        if (encendido) {
+            return mostrarEstado("Pronostico del tiempo: Soleado, 25°C.");
+        }
+        return mostrarEstado("El radio esta apagado, Encendelo primero.");
+    }
+
+    // Metodo auxiliar para generar el estado
+    private String mostrarEstado(String mensaje) {
+        return mensaje;
+    }
+}
