@@ -37,3 +37,12 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
         }
         return mostrarEstado("El radio esta apagado, Encendelo primero.");
     }
+
+    @Override
+    public String cambiarEmisora(double incremento) {
+        if (encendido) {
+            frecuencia += incremento;
+            return mostrarEstado("Frecuencia actual: " + frecuencia + " " + banda);
+        }
+        return mostrarEstado("El radio esta apagado, Encendelo primero.");
+    }
