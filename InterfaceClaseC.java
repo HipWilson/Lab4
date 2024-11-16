@@ -28,3 +28,12 @@ public class RadioClaseC implements InterfaceGeneral, InterfaceClaseC {
             return mostrarEstado("El radio esta apagado, Encendelo primero.");
         }
     }
+
+    @Override
+    public String cambiarBanda() {
+        if (encendido) {
+            banda = banda.equals("FM") ? "AM" : "FM";
+            return mostrarEstado("Banda actual: " + banda);
+        }
+        return mostrarEstado("El radio esta apagado, Encendelo primero.");
+    }
